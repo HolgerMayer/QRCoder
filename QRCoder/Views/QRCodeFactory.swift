@@ -11,6 +11,7 @@ struct QRCodeFactory {
     var contentString : String?
     var labelString : String?
     
+    let widthHeightRatio : CGFloat = 1.2
      
     func createQRImage() -> UIImage? {
         
@@ -44,7 +45,7 @@ struct QRCodeFactory {
     func expandQRWithLabel(qrImage:UIImage?) -> UIImage? {
         guard let qrImage = qrImage else { return UIImage(named:"Test") }
         guard let labelString = labelString else { return qrImage }
-        let targetSize = CGSize(width: qrImage.size.width, height: qrImage.size.height * 2.0)
+        let targetSize = CGSize(width: qrImage.size.width, height: qrImage.size.height * widthHeightRatio)
         UIGraphicsBeginImageContextWithOptions(targetSize, true, 0.0)
             // get context
         guard let context: CGContext = UIGraphicsGetCurrentContext() else { return UIImage(named:"Test")
@@ -65,8 +66,8 @@ struct QRCodeFactory {
         UIGraphicsPopContext()
         
         let string = labelString
-        let textTargetSize: CGSize = CGSize(width: targetSize.width, height: targetSize.height / 2.0)
-        let origin: CGPoint =  CGPoint(x: 0.0, y: targetSize.height / 2)
+  //      let textTargetSize: CGSize = CGSize(width: targetSize.width, height: targetSize.height / widthHeightRatio)
+        let origin: CGPoint =  CGPoint(x: 0.0, y: targetSize.height / widthHeightRatio)
         let font: UIFont = UIFont.boldSystemFont(ofSize: 10)
 
         let attrs: [NSAttributedString.Key:Any] = [.font: font]

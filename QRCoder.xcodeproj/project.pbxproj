@@ -13,7 +13,6 @@
 		548A6C8E2636A8880005D0A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548A6C8D2636A8880005D0A9 /* Assets.xcassets */; };
 		548A6C912636A8880005D0A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548A6C902636A8880005D0A9 /* Preview Assets.xcassets */; };
 		548A6C9B2636AA6E0005D0A9 /* CreateQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A6C9A2636AA6E0005D0A9 /* CreateQRCodeView.swift */; };
-		548A6CA32636AA930005D0A9 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A6CA22636AA930005D0A9 /* ImageViewer.swift */; };
 		548A6CA62636D0E90005D0A9 /* ReadQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A6CA52636D0E90005D0A9 /* ReadQRView.swift */; };
 		548A6CAB2636DB4C0005D0A9 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 548A6CAA2636DB4C0005D0A9 /* CodeScanner */; };
 /* End PBXBuildFile section */
@@ -27,7 +26,6 @@
 		548A6C902636A8880005D0A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		548A6C922636A8880005D0A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		548A6C9A2636AA6E0005D0A9 /* CreateQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRCodeView.swift; sourceTree = "<group>"; };
-		548A6CA22636AA930005D0A9 /* ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
 		548A6CA52636D0E90005D0A9 /* ReadQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadQRView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +84,6 @@
 				5464EEA4263A7B1500E9C275 /* QRCodeFactory.swift */,
 				548A6C9A2636AA6E0005D0A9 /* CreateQRCodeView.swift */,
 				548A6CA52636D0E90005D0A9 /* ReadQRView.swift */,
-				548A6CA22636AA930005D0A9 /* ImageViewer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,7 +166,6 @@
 				5464EEA5263A7B1500E9C275 /* QRCodeFactory.swift in Sources */,
 				548A6C8C2636A8870005D0A9 /* ContentView.swift in Sources */,
 				548A6CA62636D0E90005D0A9 /* ReadQRView.swift in Sources */,
-				548A6CA32636AA930005D0A9 /* ImageViewer.swift in Sources */,
 				548A6C9B2636AA6E0005D0A9 /* CreateQRCodeView.swift in Sources */,
 				548A6C8A2636A8870005D0A9 /* QRCoderApp.swift in Sources */,
 			);

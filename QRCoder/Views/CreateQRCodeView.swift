@@ -12,18 +12,34 @@ import CoreGraphics
 struct CreateQRCodeView: View {
     @State var contentText : String = ""
     @State var labelText : String = ""
+    @State var displayLabel  = false
     @State private var qrImage = UIImage(named:"Test")
     
     var body: some View {
             VStack {
-                TextField("Please enter Text", text: $contentText).padding()
+                TextField("Please enter Text", text: $contentText)
+                    .padding()
                     .onChange(of: contentText, perform: { value in
-                        let factory  = QRCodeFactory.init(contentString: contentText, labelString: nil)
-                        qrImage = factory.createQRImage()
+                        qrImage = displayImage()
                     })
-                TextField("Please enter Label", text:$labelText).padding()
+                
+                TextField("Please enter Label", text:$labelText)
+                    .padding()
+                    .onChange(of: labelText, perform: { value in
+                        qrImage = displayImage()
+                  })
+                
+                Toggle(isOn: $displayLabel) {
+                    Text("Display label?")
+                }.onChange(of: displayLabel, perform: { value in
+                    qrImage = displayImage()
+              }).padding()
+                
                 Spacer()
-                  ImageViewer(image: qrImage)
+                Image(uiImage: qrImage!)
+                    .resizable()
+                    .frame(width: 200.0, height: 220.0)
+                    .shadow(radius: 10)
                 Spacer()
                 Button("Print") {
                     printQR()
@@ -36,6 +52,18 @@ struct CreateQRCodeView: View {
     }
     
  
+    func displayImage() -> UIImage? {
+        if displayLabel == true {
+            let factory  = QRCodeFactory.init(contentString: contentText, labelString: labelText)
+            return factory.createQRImage()
+
+        } else {
+            let factory  = QRCodeFactory.init(contentString: contentText, labelString: nil)
+            return factory.createQRImage()
+        }
+
+    }
+    
     
     func printQR() {
         
@@ -62,7 +90,7 @@ struct CreateQRCodeView_Previews: PreviewProvider {
         NavigationView {
             VStack {
                 CreateQRCodeView()
-                CreateQRCodeView(contentText: "Dies ist ein Test")
+  //              CreateQRCodeView(contentText: "Dies ist ein Test")
             }
         }
     }
